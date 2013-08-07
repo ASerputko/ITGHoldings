@@ -40,4 +40,5 @@ router.get('/').to('Main.index');
 // });
 
 router.resource('auctions');
+router.resource('temp_auctions');
 exports.router = router;

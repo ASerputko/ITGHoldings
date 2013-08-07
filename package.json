@@ -2,7 +2,10 @@
   "name": "ITGHoldings",
   "version": "0.0.1",
   "author": "",
-  "dependencies": {},
+  "dependencies": {
+  	"mongodb-wrapper": "*",
+    "socket.io": "*"
+  },
   "devDependencies": {},
   "engines": {
     "node": "0.8.x"

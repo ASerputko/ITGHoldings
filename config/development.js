@@ -22,10 +22,15 @@ var config = {
 , hostname: null
 , port: 4000
 , model: {
-    defaultAdapter: 'memory'
+    defaultAdapter: 'mongo'
+  }
+, db: {
+    mongo: {
+      dbname: 'model_test'
+    }
   }
 , sessions: {
-    store: 'memory'
+    store: 'cookie'
   , key: 'sid'
   , expiry: 14 * 24 * 60 * 60
   }

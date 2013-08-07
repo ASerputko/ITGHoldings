@@ -1,4 +1,5 @@
 var config = {
+	realtime: true
   /*
   metrics: {
     port: 4001

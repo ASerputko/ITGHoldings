@@ -1,0 +1,19 @@
+<div class="hero-unit">
+  <h2>Auctions</h2>
+</div>
+
+<div id="auctions-list">
+<% if (auctions) { %>
+<div class="row list-item">
+<% for (var i = 0, ii = auctions.length; i < ii; i++) { %>
+    <div id="<%= auctions[i].id %>" class="span4">
+      <h3><%- linkTo(auctions[i].name, auctionPath(auctions[i].id)); %> $<%= auctions[i].price; %></h3>
+      <button type="button" class="btn btn-warning btn-sm offset1">Bid Now</button>
+    </div>
+    <script>$("#<%=auctions[i].id%> button").bind('click', function() {
+    	window.socket.emit("<%=auctions[i].id%>", { my: "<%=auctions[i].name%>" });
+    })</script>
+<% } %>
+</div>
+<% } %>
+</div>

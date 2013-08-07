@@ -17,6 +17,18 @@
 */
 
 var Application = function () {
+	  geddy.io.sockets.on('connection', function (socket) {
+      socket.on("andrew", function (data) {
+            console.log(data);
+          });
+      geddy.model.Auction.all(function(err, auctions) {
+        for (var i = 0, ii = auctions.length; i < ii; i++) {
+          socket.on("" + auctions[i].id + "", function (data) {
+            console.log(data);
+          });
+        }
+      });
+    });
 };
 
 exports.Application = Application;
